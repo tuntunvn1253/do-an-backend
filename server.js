@@ -18,7 +18,7 @@ const compareRoutes = require("./routes/compare.routes"); // 1. Thêm dòng này
 connectDB();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 2020;
 
 app.use(cors());
 app.use(express.json());
