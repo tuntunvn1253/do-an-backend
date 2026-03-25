@@ -20,7 +20,12 @@ connectDB();
 const app = express();
 const port = process.env.PORT || 2020;
 
-app.use(cors());
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*', // Cho phép link Vercel của bạn
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 app.get("/api", (req, res) => {
